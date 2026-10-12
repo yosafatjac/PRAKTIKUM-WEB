@@ -27,7 +27,7 @@ export default function LatihanModul2() {
 
       {/* MAIN KONTEN (Dibatasi mx-auto max-w-6xl) */}
       <main id="konten" className="mx-auto max-w-6xl p-4">
-        
+
         <section aria-labelledby="judul-utama" className="py-10 text-center">
           <h1 id="judul-utama" className="text-3xl font-extrabold mb-4">Latihan Flexbox dan Grid</h1>
           <p className="text-gray-600">Halaman ini mengimplementasikan tata letak responsif menggunakan Tailwind CSS.</p>
@@ -53,11 +53,11 @@ export default function LatihanModul2() {
           <section aria-labelledby="judul-cara">
             <h2 id="judul-cara" className="text-2xl font-bold mb-4">Cara Kerja Tata Letak</h2>
             <p className="text-gray-700 mb-2">
-              Bagian ini membuktikan penggunaan grid dengan ukuran sembarang <code>grid-cols-[2fr_1fr]</code> pada layar tablet/desktop. 
+              Bagian ini membuktikan penggunaan grid dengan ukuran sembarang <code>grid-cols-[2fr_1fr]</code> pada layar tablet/desktop.
               Konten utama mengambil dua per tiga bagian layar, sedangkan informasi tambahan mengambil satu per tiga sisa layar.
             </p>
           </section>
-          
+
           <aside aria-label="Informasi tambahan" className="rounded-lg bg-gray-100 p-6 border">
             <h3 className="font-bold mb-2">Info Tambahan</h3>
             <p className="text-sm text-gray-600">Gunakan Inspect Element (F12) untuk melihat bagaimana posisi kotak ini bergeser ke bawah saat dibuka di layar HP.</p>
