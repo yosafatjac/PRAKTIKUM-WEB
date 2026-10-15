@@ -81,7 +81,7 @@ RootLayout (Server Component) [app/layout.tsx]
 ### Tangkapan Layar Tab Components (Props dan State DaftarItem)
 Inspeksi pohon komponen pada halaman `/katalog` menggunakan React Developer Tools:
 
-![Tangkapan Layar React DevTools](img/modul-03/modul-03-react-devtools.png)
+![Tangkapan Layar React DevTools](Img/modul-03/modul-03-react-devtools.png)
 
 ### Deskripsi dan Analisis Hasil Tangkapan Layar
 Berdasarkan hasil inspeksi pada panel **Components (React Developer Tools)** pada rute `/katalog` di atas:
@@ -116,7 +116,7 @@ Alur interaktivitas pada komponen `DaftarItem` berlangsung melalui siklus terara
 ### Tangkapan Layar Panel Network untuk Permintaan `item.json`
 Pengamatan transmisi HTTP asinkron pada panel Network peramban saat mengakses komponen `ItemTerbaru`:
 
-![Tangkapan Layar Network Tab](img/modul-03/modul-03-network.png)
+![Tangkapan Layar Network Tab](Img/modul-03/modul-03-network.png)
 
 ### Deskripsi dan Analisis Hasil Tangkapan Layar
 Berdasarkan pengamatan pada tab **Network** peramban saat mengakses halaman utama (`/`):
@@ -146,7 +146,7 @@ Komponen juga menerapkan bendera pembersih (*cleanup flag* `dibatalkan = true`) 
 ### Tangkapan Layar Verifikasi Terminal (`npx tsc --noEmit` & `npm run lint`)
 Berikut adalah bukti tangkapan layar terminal pengujian kompilasi statis tipe data (`npx tsc --noEmit`) serta pemeriksaan aturan kode (`npm run lint`):
 
-![Tangkapan Layar Verifikasi Terminal](img/modul-03/modul-03-verifikasi-terminal.png)
+![Tangkapan Layar Verifikasi Terminal](Img/modul-03/modul-03-verifikasi-terminal.png)
 
 *Keterangan*: Kompiler TypeScript (`npx tsc --noEmit`) menyelesaikan validasi seluruh berkas tanpa mengeluarkan galat tipe (*0 errors*, mengikuti konvensi Unix *silence is golden*), kemudian dilanjutkan langsung dengan eksekusi `npm run lint` (`eslint`) yang juga lolos bersih tanpa kesalahan atau peringatan.
 
