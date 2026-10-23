@@ -89,12 +89,16 @@ src/app/
 
 ### Hasil Uji `layout.tsx` vs `template.tsx`
 
-1. **Sebelum Navigasi (`/katalog`):**  
+1. **Langkah 1: Sebelum Navigasi (`/katalog`):**  
    Kedua kolom input (`KolomCatatan` dengan label **"Catatan di layout (bertahan saat pindah halaman)"** dan **"Catatan di template (reset saat pindah halaman)"**) diisi dengan teks pengujian sebelum berpindah rute:
    ![01 Layout Sebelum Navigasi](screenshoot/modul-04/01_layout_sebelum_navigasi.png)
 
-2. **Sesudah Navigasi (`/katalog` → `/katalog/ktl-001` → `/katalog`):**  
-   Setelah bernavigasi antar-halaman di dalam segmen `/katalog`:
+2. **Langkah 2: Navigasi ke Halaman Detail (`/katalog/ktl-001`):**  
+   Pengguna berpindah ke rute dinamis `/katalog/ktl-001`. Terlihat jelas pada URL dan antarmuka bahwa catatan di layout **tetap bertahan**, sedangkan catatan di template **langsung ter-reset kosong** seketika rute anak dinamis dimuat:
+   ![02 Navigasi ke Detail](screenshoot/modul-04/02_navigasi_ke_detail_katalog.png)
+
+3. **Langkah 3: Sesudah Kembali ke Katalog (`/katalog`):**  
+   Setelah bernavigasi kembali ke indeks katalog ulayat:
    * Teks pada **"Catatan di layout"** **tetap bertahan (persisten)** karena *nested layout* (`src/app/katalog/layout.tsx`) tidak di-*unmount* selama pengguna berada di dalam sub-pohon `/katalog/*`.
    * Teks pada **"Catatan di template"** **kosong kembali (ter-reset)** karena Next.js membuat instans DOM/komponen baru (*remount*) pada `src/app/katalog/template.tsx` setiap kali segmen anak berganti:
    ![02 Layout Sesudah Navigasi](screenshoot/modul-04/02_layout_sesudah_navigasi.png)
@@ -102,8 +106,11 @@ src/app/
 ### Tangkapan Layar `loading.tsx` dan `error.tsx`
 
 1. **Tampilan `loading.tsx` (React Suspense Fallback):**  
-   Menampilkan indikator pemuatan dengan atribut aksesibilitas `role="status"` saat halaman `async` sedang menunggu penyelesaian *Promise* di server (diuji melalui rute lambat 2 detik sebelum folder `/uji` dibersihkan):
-   ![06 Loading Suspense](screenshoot/modul-04/06_loading_suspense.png)
+   Menampilkan indikator pemuatan dengan atribut aksesibilitas `role="status"` saat halaman `async` sedang menunggu penyelesaian *Promise* di server (diuji melalui rute lambat sebelum folder `/uji` dibersihkan):
+   * *Saat Proses Pemuatan Berlangsung (`loading.tsx` aktif):*
+     ![06 Loading Suspense](screenshoot/modul-04/06_loading_suspense_live.png)
+   * *Sesudah Selesai Dimuat (Halaman Akhir Berhasil Ditampilkan):*
+     ![06 Selesai Dimuat](screenshoot/modul-04/06_loading_suspense.png)
 
 2. **Tampilan `error.tsx` (Error Boundary):**  
    Menampilkan antarmuka pemulihan galat ramah pengguna (`role="alert"`) beserta pesan galat dan tombol **"Coba lagi"** (`retry` / `reset`) saat komponen halaman melempar *exception* di *runtime*:
